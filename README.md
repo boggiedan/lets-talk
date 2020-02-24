@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Let's Talk
 
-> Chat application written in ECMAScript6 and socket.io as server.
+> Chat application written in ECMAScript6 and socket.io as real time engine.
 
 > Uses ReactJS 16.2.0 with hooks.
 
@@ -62,11 +62,11 @@ Please run `npm i` before starting the server and the client.
 
 In the project directory, you can run:
 
-### `npm start:server`
+### `npm run start:server`
 
 runs the socket server on [http://localhost:4001](http://localhost:4001)
 
-### `npm start:client`
+### `npm run start:client`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
