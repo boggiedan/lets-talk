@@ -45,6 +45,13 @@ const Message = ({ username, userId, message, datetime }) => {
               {username} - {format(new Date(datetime), clockFormat)}
             </Typography>
           )}
+          {isCurrentUser && (
+            <Typography
+              className={getThemedClass(classes, "messageInfo", theme)}
+            >
+              {format(new Date(datetime), clockFormat)}
+            </Typography>
+          )}
           <div className={messageClasses}>
             <Linkify>
               <Typography>{message}</Typography>
