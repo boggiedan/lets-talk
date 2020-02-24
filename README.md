@@ -107,6 +107,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 - The messages are display from top to bottom. This is because of the different interpretation of the properties `flex-direction: column-reverse` and `overflow-y: auto` between chrome and firefox. Chrome recognize it but not firefox.
 
+- The useEffect in the Input component is running on changes to the message list. It should not and run only on change of the CTRL+ENTER setting. Although it is adding and removing the keydown event listener to the window it should do it only if the CTRL+ENTER setting has been changed. This is necessary in order for the event listener to access the message state property.
+
 ## Improvements to be made
 
 Due to lack of time here are some improvements and ideas to be made in the future:</br>
