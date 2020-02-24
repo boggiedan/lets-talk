@@ -50,6 +50,8 @@ development environment:<br>
 
 - The user can send images links which will be displayed as images.
 
+- The user can click on the image to open it in a new tab.
+
 - The user can pick emojis to be include in his message.
 
 - The application is responsive.
