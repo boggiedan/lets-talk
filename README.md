@@ -56,6 +56,8 @@ development environment:<br>
 
 - User settings are stored in the local storage.
 
+- Any links in the sent messages are linkyfied.
+
 ## Available Scripts
 
 Please run `npm i` before starting the server and the client.
