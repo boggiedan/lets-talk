@@ -12,8 +12,9 @@ import EmbeddedYoutube from "./embeddedyoutube/EmbeddedYoutube";
 import { getThemedClass } from "../../../../theme/themeUtils";
 
 const matchImg = new RegExp("(http)?s?:?(//[^\"']*.(?:png|jpg|jpeg|gif))");
-const matchYoutube =
-  "(?:youtube\\.com\\/\\S*(?:(?:\\/e(?:mbed))?\\/|watch\\?(?:\\S*?&?v\\=))|youtu\\.be\\/)([a-zA-Z0-9_-]{6,11})";
+const matchYoutube = new RegExp(
+  "(?:youtube\\.com\\/\\S*(?:(?:\\/e(?:mbed))?\\/|watch\\?(?:\\S*?&?v\\=))|youtu\\.be\\/)([a-zA-Z0-9_-]{6,11})"
+);
 
 const Message = ({ username, userId, message, datetime }) => {
   const user = useContext(UserContext);
