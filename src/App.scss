@@ -1,0 +1,31 @@
+@import "./theme/palette";
+
+.App {
+  height: 100%;
+  text-align: center;
+  transition: all 0.3s;
+
+  &__light {
+    @extend .App;
+    background-image: linear-gradient(
+      to right top,
+      color("primary", "base"),
+      color("secondary", "base"),
+      color("ternary", "base"),
+      color("quaternary", "base"),
+      color("quinquanary", "base")
+    );
+  }
+
+  &__dark {
+    @extend .App;
+    background-image: linear-gradient(
+      to right top,
+      color("quinquanary", "base"),
+      color("quaternary", "base"),
+      color("ternary", "base"),
+      color("secondary", "base"),
+      color("primary", "base")
+    );
+  }
+}

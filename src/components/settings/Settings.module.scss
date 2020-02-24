@@ -1,0 +1,195 @@
+@import "../../theme/theme";
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: 280px;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: calc(100% - 60px);
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+
+  &__light {
+    @extend .wrapper;
+    background-color: theme("light", "backgroundColor");
+  }
+
+  &__dark {
+    @extend .wrapper;
+    background-color: theme("dark", "backgroundColor");
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+
+  @media screen and (max-width: 540px) {
+    border-radius: 0px;
+  }
+
+  @media screen and (max-width: 700px) and (orientation: portrait) {
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+
+  @media screen and (max-height: 800px) {
+    overflow-y: auto;
+  }
+}
+
+html .title {
+  font-size: 3rem;
+
+  &__light {
+    @extend .title;
+    color: theme("light", "textColor");
+  }
+
+  &__dark {
+    @extend .title;
+    color: theme("dark", "textColor");
+  }
+}
+
+.settingWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.unreadMessagesBadge {
+  right: -10px !important;
+
+  &__light {
+    @extend .unreadMessagesBadge;
+    color: theme("light", "contrastTextColor");
+    background-color: theme("light", "contrastBackgroundColor") !important;
+  }
+
+  &__dark {
+    @extend .unreadMessagesBadge;
+    color: theme("dark", "contrastTextColor");
+    background-color: theme("dark", "contrastBackgroundColor") !important;
+  }
+}
+
+.goBackButton {
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &__light {
+    @extend .goBackButton;
+    color: theme("light", "highlight");
+
+    &:hover {
+      color: theme("light", "highlight");
+      margin-left: 5px;
+    }
+  }
+
+  &__dark {
+    @extend .goBackButton;
+    color: theme("dark", "highlight");
+
+    &:hover {
+      color: theme("dark", "highligh");
+      margin-left: 5px;
+    }
+  }
+}
+
+.inputLabel {
+  &__light {
+    color: theme("light", "highlight") !important;
+  }
+
+  &__dark {
+    color: theme("dark", "highlight") !important;
+  }
+}
+
+.input {
+  transition: all 0.3s;
+
+  &__light {
+    @extend .input;
+    color: theme("light", "textColor") !important;
+  }
+
+  &__dark {
+    @extend .input;
+    color: theme("dark", "textColor") !important;
+  }
+}
+
+.inputFocused {
+  &__light {
+    border-color: theme("light", "textBorder") !important;
+  }
+
+  &__dark {
+    border-color: theme("dark", "textBorder") !important;
+  }
+}
+
+.highlight {
+  &__light {
+    color: theme("light", "highlight") !important;
+  }
+
+  &__dark {
+    color: theme("dark", "highlight") !important;
+  }
+}
+
+html .resetButton {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 95%;
+
+  &__light {
+    @extend .resetButton;
+    color: theme("light", "textColor") !important;
+    background-color: theme("light", "backgroundColor" !important);
+
+    &:hover {
+      color: theme("light", "highlight") !important;
+      background-color: theme("light", "contrastBackgroundColor") !important;
+    }
+  }
+
+  &__dark {
+    @extend .resetButton;
+    color: theme("dark", "textColor") !important;
+    background-color: theme("dark", "backgroundColor") !important;
+
+    &:hover {
+      color: theme("dark", "highlight") !important;
+      background-color: theme("dark", "contrastBackgroundColor") !important;
+    }
+  }
+
+  @media screen and (max-height: 800px) {
+    position: relative;
+  }
+}

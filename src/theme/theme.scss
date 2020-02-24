@@ -1,0 +1,39 @@
+@import "palette";
+
+$themes: (
+  light: (
+    backgroundColor: color("monochrome", "base"),
+    contrastBackgroundColor: color("primary", "base"),
+    textColor: color("monochrome", "darker"),
+    textBorder: color("primary", "base"),
+    highlight: color("primary", "dark"),
+    contrastTextColor: color("secondary", "deep-light")
+  ),
+  dark: (
+    backgroundColor: color("ternary", "dark"),
+    contrastBackgroundColor: color("ternary", "base"),
+    textColor: color("secondary", "deep-light"),
+    textBorder: color("secondary", "deep-light"),
+    highlight: color("secondary", "deep-light"),
+    contrastTextColor: color("secondary", "deep-light")
+  )
+);
+
+@function theme($theme, $attribute) {
+  @warn map-get($themes, $theme);
+
+  @if map-has-key($themes, $theme) {
+    $t: map-get($themes, $theme);
+
+    @if map-has-key($t, $attribute) {
+      $prop: map-get($t, $attribute);
+      @return $prop;
+    }
+
+    @warn "Theme attribute not found";
+    @return null;
+  }
+
+  @warn "Theme not found";
+  @return null;
+}

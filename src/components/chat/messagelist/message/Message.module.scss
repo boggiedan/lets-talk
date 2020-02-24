@@ -1,0 +1,98 @@
+@import "../../../../theme/theme";
+
+@keyframes flyin {
+  0% {
+    transform: scale(0.85) translateY(10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.messageContainer {
+  display: flex;
+}
+
+.messageContainerLeft {
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+
+.messageContainerRight {
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+
+.messageWrapper {
+  max-width: 65%;
+  animation: flyin 0.5s;
+
+  @media screen and (max-width: 490px) {
+    max-width: 90%;
+  }
+}
+
+.message {
+  padding: 10px;
+  overflow-wrap: break-word;
+  box-shadow: 1px 1px 5px
+    rgba($color: color("monochrome", "deep-dark"), $alpha: 0.5);
+  text-align: justify;
+}
+
+.messageLeft {
+  border-radius: 0px 10px 10px 10px;
+
+  &__light {
+    @extend .messageLeft;
+    background-color: color("secondary", "base");
+    color: theme("dark", "contrastTextColor");
+  }
+
+  &__dark {
+    @extend .messageLeft;
+    background-color: theme("dark", "contrastBackgroundColor");
+    color: theme("dark", "contrastTextColor");
+  }
+}
+
+.messageRight {
+  border-radius: 10px 0px 10px 10px;
+
+  &__light {
+    @extend .messageRight;
+    background-color: theme("light", "contrastBackgroundColor");
+    color: theme("light", "contrastTextColor");
+  }
+
+  &__dark {
+    @extend .messageRight;
+    background-color: color("primary", "light");
+    color: color("monochrome", "base");
+  }
+}
+
+.messageInfo {
+  font-size: 0.7rem !important;
+
+  &__light {
+    @extend .messageInfo;
+    color: color("secondary", "base");
+  }
+
+  &__dark {
+    @extend .messageInfo;
+    color: theme("dark", "contrastTextColor");
+  }
+}

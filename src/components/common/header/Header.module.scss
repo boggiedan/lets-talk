@@ -1,0 +1,116 @@
+@import "../../../theme/theme";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  min-width: 280px;
+
+  @media screen and (max-width: 700px) {
+    height: 40px;
+  }
+
+  @media screen and (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+
+  @media screen and (max-height: 550px) and (orientation: landscape) {
+    font-size: 1.2rem !important;
+    margin-left: 0px !important;
+    height: 40px;
+  }
+}
+
+.logo {
+  font-size: 2.5rem !important;
+  margin-left: 50px !important;
+  cursor: pointer;
+  color: color("monochrome", "base");
+  transition: all 0.3s;
+
+  @media screen and (max-width: 700px) {
+    font-size: 2rem !important;
+  }
+
+  @media screen and (max-width: 550px) {
+    font-size: 1.2rem !important;
+    margin-left: 20px !important;
+  }
+
+  @media screen and (max-height: 550px) and (orientation: landscape) {
+    font-size: 1.2rem !important;
+    margin-left: 20px !important;
+  }
+}
+
+.logo:hover {
+  color: color("ternary", "deep-light");
+}
+
+.userWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.4rem;
+  margin-right: 50px !important;
+  cursor: pointer;
+  color: color("monochrome", "base");
+  transition: all 0.3s;
+
+  @media screen and (max-width: 700px) {
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px !important;
+  }
+
+  @media screen and (max-width: 550px) and (orientation: portrait) {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media screen and (max-height: 550px) and (orientation: landscape) {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.userWrapper:hover {
+  color: color("quaternary", "deep-light");
+}
+
+.userWrapper:hover svg {
+  transform: scale(1.2);
+}
+
+.username {
+  font-size: 2rem;
+  margin-right: 20px;
+
+  @media screen and (max-width: 550px) {
+    font-size: 0.8rem;
+    margin-right: 0px;
+  }
+}
+
+.icon {
+  margin-top: 2px;
+  margin-left: 20px;
+  transition: all 0.3s;
+
+  @media screen and (max-width: 550px) {
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+}

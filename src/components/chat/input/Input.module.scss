@@ -1,0 +1,103 @@
+@import "../../../theme/theme";
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0px 0px 10px 10px;
+
+  &__light {
+    @extend .container;
+    background-color: theme("light", "backgroundColor");
+  }
+
+  &__dark {
+    @extend .container;
+    background-color: theme("dark", "backgroundColor");
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.toggleEmoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: auto;
+  padding: 0;
+  margin-bottom: 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &__light {
+    @extend .toggleEmoji;
+    background-color: theme("light", "backgroundColor");
+    color: theme("light", "textColor");
+  }
+
+  &__dark {
+    @extend .toggleEmoji;
+    background-color: theme("dark", "backgroundColor");
+    color: theme("dark", "textColor");
+  }
+}
+
+.sendIcon {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 2rem;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &__light {
+    @extend .sendIcon;
+    background-color: theme("light", "backgroundColor");
+    color: theme("light", "textColor");
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__dark {
+    @extend .sendIcon;
+    background-color: theme("dark", "backgroundColor");
+    color: theme("dark", "textColor");
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.input {
+  transition: all 0.3s;
+
+  &__light {
+    @extend .input;
+    color: theme("light", "textColor") !important;
+  }
+
+  &__dark {
+    @extend .input;
+    color: theme("dark", "textColor") !important;
+  }
+}
+
+.inputFocused {
+  &__light {
+    border-color: theme("light", "textBorder") !important;
+  }
+
+  &__dark {
+    border-color: theme("dark", "textBorder") !important;
+  }
+}

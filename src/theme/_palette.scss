@@ -1,0 +1,69 @@
+$primary: #6d327c;
+$secondary: #485da6;
+$ternary: #00a1ba;
+$quaternary: #00bf98;
+$quinquanary: #36c486;
+$white: #fff;
+
+$palette: (
+  primary: (
+    "deep-dark": darken($primary, 40%),
+    "dark": darken($primary, 20%),
+    "base": $primary,
+    "light": lighten($primary, 20%),
+    "deep-light": lighten($primary, 40%)
+  ),
+  secondary: (
+    "deep-dark": darken($secondary, 40%),
+    "dark": darken($secondary, 20%),
+    "base": $secondary,
+    "light": lighten($secondary, 20%),
+    "deep-light": lighten($secondary, 40%)
+  ),
+  ternary: (
+    "deep-dark": darken($ternary, 40%),
+    "dark": darken($ternary, 20%),
+    "base": $ternary,
+    "light": lighten($ternary, 20%),
+    "deep-light": lighten($ternary, 40%)
+  ),
+  quaternary: (
+    "deep-dark": darken($quaternary, 40%),
+    "dark": darken($quaternary, 20%),
+    "base": $quaternary,
+    "light": lighten($quaternary, 10%),
+    "deep-light": lighten($quaternary, 40%)
+  ),
+  quinquanary: (
+    "deep-dark": darken($quinquanary, 40%),
+    "dark": darken($quinquanary, 20%),
+    "base": $quinquanary,
+    "light": lighten($quinquanary, 20%),
+    "deep-light": lighten($quinquanary, 40%)
+  ),
+  monochrome: (
+    "deep-dark": darken($white, 100%),
+    "darker": darken($white, 85%),
+    "dark": darken($white, 20%),
+    "base": $white
+  )
+);
+
+@function color($color, $tone) {
+  @warn map-get($palette,$color);
+
+  @if map-has-key($palette, $color) {
+    $color: map-get($palette, $color);
+
+    @if map-has-key($color, $tone) {
+      $tone: map-get($color, $tone);
+      @return $tone;
+    }
+
+    @warn "unknown tone `#{$tone}` in color";
+    @return null;
+  }
+
+  @warn "unknown color `#{$color}` in palette";
+  @return null;
+}

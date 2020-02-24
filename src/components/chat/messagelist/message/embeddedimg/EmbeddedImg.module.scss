@@ -1,0 +1,12 @@
+.img {
+  max-width: 50%;
+  max-height: 50%;
+  margin: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.img:hover {
+  transform: scale(1.02);
+}
