@@ -119,7 +119,7 @@ Due to lack of time here are some improvements and ideas to be made in the futur
 
 - Creation of chat rooms with other connected users.
 
-- Store server data in a for example MangoDB database.
+- Store server data in a for example MongoDB database.
 
 - Retrieving all history messages by slices (ex: from last to last - 20).
 
